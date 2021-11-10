@@ -1,0 +1,21 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title> {{ title }} </title>
+    <link href="{% static 'encyclopedia/styles.css' %}" rel="stylesheet">
+</head>
+
+<body>
+    {% if content %}
+        {{ content | safe}}
+    {% else %}
+    <p>
+        Page is not found!
+    </p>
+    {% endif %}
+</body>
+
+</html>
