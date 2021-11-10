@@ -4,14 +4,13 @@
 <html lang="en">
 
 <head>
-    <title> {{  title }} </title>
+    <h1> Create Your Wiki Entry</h1>
 </head>
 
 <body>
-    <form>
-        <textarea name="story" rows="5" cols="33">
-Enter your entry's content:
-        </textarea>
+    <form method="post">
+        {% csrf_token %}
+        {{ form }}
         <br><br>
         <input type="submit" value="Submit">
     </form>

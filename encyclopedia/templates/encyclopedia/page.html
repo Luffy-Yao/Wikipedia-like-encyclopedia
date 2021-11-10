@@ -9,12 +9,20 @@
 </head>
 
 <body>
-    {% if content %}
-        {{ content | safe}}
-    {% else %}
-    <p>
-        Page is not found!
-    </p>
+    <form method="post">
+        {% csrf_token %}
+        {% if content %}
+
+        <textarea>{{ content | safe}}</textarea>
+        
+
+        <input type="submit" value="Save Your Changes">
+        {% else %}
+        <p>
+            Page is not found!
+        </p>
+    </form>
+
     {% endif %}
 </body>
 
