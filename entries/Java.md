@@ -1,0 +1,3 @@
+<h1> Java </h1>
+
+Java is a high-level<a href = "https://en.wikipedia.org/wiki/High-level_programming_language">, class-based<a href = "https://en.wikipedia.org/wiki/Class-based_programming">, object-oriented programming language]<a href="https://en.wikipedia.org/wiki/Object-oriented_programming"> that is designed to have as few implementation [dependencies]<a href = "https://en.wikipedia.org/wiki/Coupling_(computer_programming)"> as possible.

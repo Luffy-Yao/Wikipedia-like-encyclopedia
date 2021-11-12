@@ -1,0 +1,29 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title> {{ title }} </title>
+    <link href="{% static 'encyclopedia/styles.css' %}" rel="stylesheet">
+</head>
+
+<body>
+    <form method="post">
+        {% csrf_token %}
+        {% if content %}
+        <textarea name = 'eContent'>
+            {{ content }}
+        </textarea>
+
+        <input type="submit" method="POST" value="Save Your Changes">
+        {% else %}
+        <p>
+            Page is not found!
+        </p>
+    </form>
+
+    {% endif %}
+</body>
+
+</html>
