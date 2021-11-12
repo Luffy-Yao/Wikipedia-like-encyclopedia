@@ -12,11 +12,11 @@
     <form method="post">
         {% csrf_token %}
         {% if content %}
+        {{ content | safe}}
+        <br><br><br><br>
 
-        <textarea>{{ content | safe}}</textarea>
         
-
-        <input type="submit" value="Save Your Changes">
+        <a href = "http://127.0.0.1:8000/wiki/{{title}}/edit" > Edit </a>
         {% else %}
         <p>
             Page is not found!

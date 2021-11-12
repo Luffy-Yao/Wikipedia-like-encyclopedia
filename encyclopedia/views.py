@@ -29,20 +29,25 @@ def random_page(request):
 
 
 def page_content(request, title):
+    return render(request, "encyclopedia/page.html", {
+        "content" : util.get_entry(title),
+        "title" : title
+    })
+
+
+
+def edit(request, title):
     form = NewForm(request.POST)
     if request.method == "POST":
-        if form.is_valid():
-            content = form.cleaned_data["Contents"]
-            util.save_entry(title, content)
-            return redirect('index')
-        else:
-            return render(request, "encyclopedia/new_page.html", {
-                        "form": form
-                    })
-    return render(request, "encyclopedia/page.html", {
-        "content": markdown2.markdown(util.get_entry(title)),
-        "title": title
-    })
+        entryContent = request.POST.get('eContent')
+        util.save_entry(title, entryContent)
+        return redirect('index')
+    else:
+        return render(request, "encyclopedia/edit_page.html", {
+            "content": markdown2.markdown(util.get_entry(title)),
+            "title": title
+        })
+
 
 def new_page(request):
     if request.method == "POST":
